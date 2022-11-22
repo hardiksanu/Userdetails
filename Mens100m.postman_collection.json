@@ -1,0 +1,143 @@
+{
+	"info": {
+		"_postman_id": "e20ab432-7e30-4c7e-8a34-273ec033945b",
+		"name": "Mens100m",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21258850"
+	},
+	"item": [
+		{
+			"name": "Create mens",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ranking\": 8,\r\n    \"name\": \"Yohan BLAKE\",\r\n    \"dob\":\"26 DEC 1989\",\r\n    \"country\": \"JAMAICA\",\r\n    \"score\": 1340\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:3000/mens",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"mens"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Mens",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "127.0.0.1:3000/mens",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"mens"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Men",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:3000/mens/636fb321e47b0de08a4fd884",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"mens",
+						"636fb321e47b0de08a4fd884"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Mens",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Ferdinands\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:3000/mens/636fb321e47b0de08a4fd884",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"mens",
+						"636fb321e47b0de08a4fd884"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Mens",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:3000/mens/636f76b0b426279a5097657f",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"mens",
+						"636f76b0b426279a5097657f"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
