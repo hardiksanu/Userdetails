@@ -40,30 +40,44 @@ router.get('/mens', async (req, res) => {
 router.put('/mens/:id', async (req, res) => {
         try {
                 const _id = req.params.id;
-                const getMen = await MensRanking.findById(_id);
+                console.log(_id);
+                const singleMen = await MensRanking.findById(_id);
                 res.setHeader('Access-Control-Allow-Origin', '*');
-                res.send(getMen);
+                if(!singleMen){
+                        return res.status(404).send();
+                }
+                else{
+                        res.send(singleMen);
+                }
+                console.log(singleMen);
         } catch (e) {
-                res.status(500).send(e);
+                res.status(400).send(e);
         }
 });
 // we will handle patch req. with individual_id
 router.patch('/mens/:id', async (req, res) => {
         try {
                 const _id = req.params.id;
-                const getMen = await MensRanking.findByIdAndUpdate(_id, req.body, { new: true });
+                console.log(_id);
+                const updateMen = await MensRanking.findByIdAndUpdate(_id, req.body, { new: true });
                 res.setHeader('Access-Control-Allow-Origin', '*');
-                res.send(getMen);
+                if(!updateMen){
+                        return res.status(404).send();
+                }
+                else{
+                        res.send(updateMen);
+                }
+                console.log(updateMen);
         } catch (e) {
-                res.status(500).send(e);
+                res.status(400).send(e);
         }
 });
 // we will handle delete request with individual_id
 router.delete('/mens/:id', async (req, res) => {
         try {
-                const getMen = await MensRanking.findByIdAndDelete(req.params.id);
+                const deleteMen = await MensRanking.findByIdAndDelete(req.params.id);
                 res.setHeader('Access-Control-Allow-Origin', '*');
-                res.send(getMen);
+                res.send(deleteMen);
         } catch (e) {
                 res.status(500).send(e);
         }
