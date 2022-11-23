@@ -12,8 +12,9 @@ router.post('/mens', async (req, res) => {
                 const addMensRecords = new MensRanking(req.body);
                 console.log(req.body);
 
-                const ranking_id = req.params.ranking;
-                if (ranking_id == req.params.ranking) {
+                const oldUser = await MensRanking.findOne({ ranking: req.body.ranking });
+                console.log(oldUser);
+                if (oldUser) {
                               return res.status(409).send("Ranking id is already assign, Please assing different ranking_id.");
                     };
                 const insertMens =  await addMensRecords.save();
